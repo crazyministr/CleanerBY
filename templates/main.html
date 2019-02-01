@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная{% endblock %}
+
+{% block nav_items %}
+  <ul class="navbar-nav text-uppercase ml-auto">
+    <li class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#about">About</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#team">Team</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+    </li>
+  </ul>
+{% endblock %}
+
+{% block content %}
+  {% include 'header.html' %}
+  <section id="services">
+    {% include 'sevices.html' %}
+  </section>
+
+  <section class="bg-light" id="portfolio">
+    {% include 'portfolio.html' %}
+  </section>
+
+  <section id="about">
+    {% include 'about.html' %}
+  </section>
+
+  <section class="bg-light" id="team">
+    {% include 'team.html' %}
+  </section>
+
+  <section id="contact">
+    {% include 'contacts.html' %}
+  </section>
+
+{#  <section class="py-5">#}
+{#    {% include 'clients.html' %}#}
+{#  </section>#}
+
+  {% include 'footer.html' %}
+{% endblock %}
