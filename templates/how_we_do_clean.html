@@ -1,0 +1,132 @@
+{% load static %}
+{% block head %}
+  <style type="text/css">
+  nav > .nav.nav-tabs {
+    border: none;
+    color:#fff;
+    background:#272e38;
+    border-radius:0;
+  }
+
+  nav > div a.nav-item.nav-link,
+  nav > div a.nav-item.nav-link.active
+  {
+    border: none;
+    padding: 18px 25px;
+    color:#fff;
+    background:#272e38;
+    border-radius:0;
+  }
+
+  nav > div a.nav-item.nav-link.active:after
+  {
+    content: "";
+    position: relative;
+  }
+
+  .tab-content{
+    background: #fdfdfd;
+    line-height: 25px;
+    border: 1px solid #ddd;
+    padding: 30px;
+  }
+
+  .tab-content > .tab-pane {
+    padding: 15px;
+  }
+
+  nav > div a.nav-item.nav-link:hover,
+  nav > div a.nav-item.nav-link:focus
+  {
+    border: none;
+    background: #fec810;
+    color:#fff;
+    border-radius:0;
+    transition:background 0.20s linear;
+  }
+  </style>
+{% endblock %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <h2 class="section-heading text-uppercase">Как мы делаем уборку квартиры</h2>
+      <h3 class="section-subheading text-muted">Наш сотрудник приезжает в назначенное время со всем необходимым и сразу приступает к делу.<br>Вам остаётся только оценить результат</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <nav>
+        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">КОМНАТЫ</a>
+          <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">КОРИДОР</a>
+          <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">КУХНЯ</a>
+          <a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="#nav-about" role="tab" aria-controls="nav-about" aria-selected="false">ВАННАЯ</a>
+        </div>
+      </nav>
+      <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+          <div class="row">
+            <div class="col-lg-6">
+              ТЕКСТ
+              <ul>
+                <li>Моем пол и протираем плинтусы</li>
+                <li>Моем пол и протираем плинтусы</li>
+                <li>Моем пол и протираем плинтусы</li>
+                <li>Моем пол и протираем плинтусы</li>
+                <li>Моем пол и протираем плинтусы</li>
+                <li>Моем пол и протираем плинтусы</li>
+              </ul>
+            </div>
+            <div class="col-lg-6">
+              ДОПОЛНИТЕЛЬНО
+              <ul>
+                <li>Приберём балкон</li>
+                <li>Приберём балкон</li>
+                <li>Приберём балкон</li>
+                <li>Приберём балкон</li>
+                <li>Приберём балкон</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+          <div class="row">
+            <div class="col-lg-6">
+              ТЕКСТ
+              <ul>
+                <li>Моем посуду</li>
+                <li>Моем посуду</li>
+                <li>Моем посуду</li>
+                <li>Моем посуду</li>
+                <li>Моем посуду</li>
+              </ul>
+            </div>
+            <div class="col-lg-6">
+              ДОПОЛНИТЕЛЬНО
+              <ul>
+                <li>Почистим холодильник</li>
+                <li>Почистим холодильник</li>
+                <li>Почистим холодильник</li>
+                <li>Почистим холодильник</li>
+                <li>Почистим холодильник</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+          БУДЕТ ИНФА
+        </div>
+        <div class="tab-pane fade" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
+          БУДЕТ ИНФА
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 30px;">
+    <div class="col-lg-12 text-center">
+      <h2 class="section-heading text-uppercase">Что мы НЕ делаем на уборке</h2>
+      Здесь список
+    </div>
+  </div>
+</div>

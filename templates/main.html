@@ -5,19 +5,22 @@
 {% block nav_items %}
   <ul class="navbar-nav text-uppercase ml-auto">
     <li class="nav-item">
-      <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+      <a class="nav-link js-scroll-trigger" href="#services">Гарантия</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+      <a class="nav-link js-scroll-trigger" href="#how_we_do_clean">Как мы делаем уборку</a>
+    </li>
+{#    <li class="nav-item">#}
+{#      <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>#}
+{#    </li>#}
+{#    <li class="nav-item">#}
+{#      <a class="nav-link js-scroll-trigger" href="#about">About</a>#}
+{#    </li>#}
+    <li class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#team">Наша команда</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link js-scroll-trigger" href="#about">About</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link js-scroll-trigger" href="#team">Team</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+      <a class="nav-link js-scroll-trigger" href="#contact">Контакты</a>
     </li>
   </ul>
 {% endblock %}
@@ -28,13 +31,19 @@
     {% include 'sevices.html' %}
   </section>
 
-  <section class="bg-light" id="portfolio">
-    {% include 'portfolio.html' %}
+  <section class="bg-light"></section>
+
+  <section id="how_we_do_clean">
+    {% include 'how_we_do_clean.html' %}
   </section>
 
-  <section id="about">
-    {% include 'about.html' %}
-  </section>
+{#  <section class="bg-light" id="portfolio">#}
+{#    {% include 'portfolio.html' %}#}
+{#  </section>#}
+
+{#  <section id="about">#}
+{#    {% include 'about.html' %}#}
+{#  </section>#}
 
   <section class="bg-light" id="team">
     {% include 'team.html' %}
