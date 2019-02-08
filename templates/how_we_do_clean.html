@@ -26,16 +26,17 @@
     a {
       color: black;
     }
-    .nav-tabs {
-      border-bottom: 0;
+    .nav-tabs .nav-link.active {
+      border-bottom-color: rgb(222, 226, 230);
+      border-bottom-left-radius: .25em;
+      border-bottom-right-radius: .25em;
+      color: white;
+      background-color: black;
     }
-  .nav-tabs .nav-link.active {
-    border-bottom-color: rgb(222, 226, 230);
-    border-bottom-left-radius: .25em;
-    border-bottom-right-radius: .25em;
-    color: white;
-    background-color: black;
-  }
+    .nav-tabs .nav-link {
+      border: 1px solid black;
+      border-radius: .25em;
+    }
   </style>
 {% endblock %}
 
