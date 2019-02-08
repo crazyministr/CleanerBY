@@ -1,49 +1,31 @@
 {% load static %}
-{% block head %}
+
+{% block css_extra %}
   <style type="text/css">
-  nav > .nav.nav-tabs {
-    border: none;
-    color:#fff;
-    background:#272e38;
-    border-radius:0;
-  }
-
-  nav > div a.nav-item.nav-link,
-  nav > div a.nav-item.nav-link.active
-  {
-    border: none;
-    padding: 18px 25px;
-    color:#fff;
-    background:#272e38;
-    border-radius:0;
-  }
-
-  nav > div a.nav-item.nav-link.active:after
-  {
-    content: "";
-    position: relative;
-  }
-
-  .tab-content{
-    background: #fdfdfd;
-    line-height: 25px;
-    border: 1px solid #ddd;
-    padding: 30px;
-  }
-
-  .tab-content > .tab-pane {
-    padding: 15px;
-  }
-
-  nav > div a.nav-item.nav-link:hover,
-  nav > div a.nav-item.nav-link:focus
-  {
-    border: none;
-    background: #fec810;
-    color:#fff;
-    border-radius:0;
-    transition:background 0.20s linear;
-  }
+    .visible-col {
+      background-color: rgb(248, 248, 248);
+      border-radius: 6px;
+      padding: 10px;
+    }
+    .list-group-item {
+      border: 0;
+    }
+    .visible-col .list-group-item {
+      background-color: rgb(248, 248, 248);
+    }
+    .green-icon {
+      font-size: 10px;
+      color: green;
+      margin-right: 7px;
+    }
+    .red-icon {
+      font-size: 15px;
+      color: red;
+      margin-right: 7px;
+    }
+    a {
+      color: black;
+    }
   </style>
 {% endblock %}
 
@@ -55,70 +37,138 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-lg-12">
-      <nav>
-        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-          <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">КОМНАТЫ</a>
-          <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">КОРИДОР</a>
-          <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">КУХНЯ</a>
-          <a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="#nav-about" role="tab" aria-controls="nav-about" aria-selected="false">ВАННАЯ</a>
-        </div>
-      </nav>
-      <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
-        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+    <div class="col-3">
+      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Во всей квартире</a>
+        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">На кухне</a>
+        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">В ванной</a>
+        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Вещи</a>
+      </div>
+    </div>
+    <div class="col-9">
+      <div class="tab-content" id="v-pills-tabContent">
+        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
           <div class="row">
-            <div class="col-lg-6">
-              ТЕКСТ
-              <ul>
-                <li>Моем пол и протираем плинтусы</li>
-                <li>Моем пол и протираем плинтусы</li>
-                <li>Моем пол и протираем плинтусы</li>
-                <li>Моем пол и протираем плинтусы</li>
-                <li>Моем пол и протираем плинтусы</li>
-                <li>Моем пол и протираем плинтусы</li>
+            <div class="col-md-6">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><i class="fa fa-circle green-icon"></i>Моем пол и протираем плинтусы</li>
+                <li class="list-group-item"><i class="fa fa-circle green-icon"></i>Пылесосим ковры и коврики</li>
+                <li class="list-group-item"><i class="fa fa-circle green-icon"></i>Протираем все доступные поверхности</li>
+                <li class="list-group-item"><i class="fa fa-circle green-icon"></i>Чистим зеркала и стеклянные поверхности</li>
+                <li class="list-group-item"><i class="fa fa-circle green-icon"></i>Собираем и выносим мусор</li>
               </ul>
             </div>
-            <div class="col-lg-6">
-              ДОПОЛНИТЕЛЬНО
-              <ul>
-                <li>Приберём балкон</li>
-                <li>Приберём балкон</li>
-                <li>Приберём балкон</li>
-                <li>Приберём балкон</li>
-                <li>Приберём балкон</li>
+            <div class="col-md-6 visible-col">
+              <div class="col-lg-12 text-center">
+                <h4 class="text-muted" style="border-bottom: 1px solid rgba(0,0,0,.125)">ДОПОЛНИТЬ УБОРКУ</h4>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  Помоем окна
+                  <span class="badge badge-primary badge-pill">от 5 <i class="fa fa-ruble-sign"></i></span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  Приберём балкон
+                  <span class="badge badge-primary badge-pill">от 10 <i class="fa fa-ruble-sign"></i></span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  Помоем люстру
+                  <span class="badge badge-primary badge-pill">от 10 <i class="fa fa-ruble-sign"></i></span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  Заберем ключи
+                  <span class="badge badge-primary badge-pill">от 5 <i class="fa fa-ruble-sign"></i></span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  Доставим ключи
+                  <span class="badge badge-primary badge-pill">от 5 <i class="fa fa-ruble-sign"></i></span>
+                </li>
               </ul>
             </div>
           </div>
         </div>
-        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
           <div class="row">
-            <div class="col-lg-6">
-              ТЕКСТ
-              <ul>
-                <li>Моем посуду</li>
-                <li>Моем посуду</li>
-                <li>Моем посуду</li>
-                <li>Моем посуду</li>
-                <li>Моем посуду</li>
+            <div class="col-md-6">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><i class="fa fa-circle green-icon"></i>Моем посуду</li>
+                <li class="list-group-item"><i class="fa fa-circle green-icon"></i>Моем раковину</li>
+                <li class="list-group-item"><i class="fa fa-circle green-icon"></i>Протираем столешницу и кухонный фартук</li>
+                <li class="list-group-item"><i class="fa fa-circle green-icon"></i>Моем снаружи плиту, холодильник и вытяжку</li>
+                <li class="list-group-item"><i class="fa fa-circle green-icon"></i>Протираем фасады шкафов</li>
               </ul>
             </div>
-            <div class="col-lg-6">
-              ДОПОЛНИТЕЛЬНО
-              <ul>
-                <li>Почистим холодильник</li>
-                <li>Почистим холодильник</li>
-                <li>Почистим холодильник</li>
-                <li>Почистим холодильник</li>
-                <li>Почистим холодильник</li>
+            <div class="col-md-6 visible-col">
+              <div class="col-lg-12 text-center">
+                <h4 class="text-muted" style="border-bottom: 1px solid rgba(0,0,0,.125)">ДОПОЛНИТЬ УБОРКУ</h4>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  Почистим холодильник
+                  <span class="badge badge-primary badge-pill">от 10 <i class="fa fa-ruble-sign"></i></span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  Помоем духовку
+                  <span class="badge badge-primary badge-pill">от 10 <i class="fa fa-ruble-sign"></i></span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  Помоем микроволновку
+                  <span class="badge badge-primary badge-pill">от 5 <i class="fa fa-ruble-sign"></i></span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  Приберём кухонные шкафы
+                  <span class="badge badge-primary badge-pill">от 10 <i class="fa fa-ruble-sign"></i></span>
+                </li>
               </ul>
             </div>
           </div>
         </div>
-        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-          БУДЕТ ИНФА
+        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+          <div class="row">
+            <div class="col-md-6">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><i class="fa fa-circle green-icon"></i>Чистим унитаз</li>
+                <li class="list-group-item"><i class="fa fa-circle green-icon"></i>Моем ванну, душевую кабину и раковину</li>
+              </ul>
+            </div>
+            <div class="col-md-6 visible-col">
+              <div class="col-lg-12 text-center">
+                <h4 class="text-muted" style="border-bottom: 1px solid rgba(0,0,0,.125)">ДОПОЛНИТЬ УБОРКУ</h4>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  Помоем лоток питомца
+                  <span class="badge badge-primary badge-pill">от 5 <i class="fa fa-ruble-sign"></i></span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="tab-pane fade" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
-          БУДЕТ ИНФА
+        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+          <div class="row">
+            <div class="col-md-6">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><i class="fa fa-circle green-icon"></i>Одежду аккуратно складываем</li>
+                <li class="list-group-item"><i class="fa fa-circle green-icon"></i>Расставляем обувь</li>
+                <li class="list-group-item"><i class="fa fa-circle green-icon"></i>Меняем постельное бельё и застилаем кровать</li>
+              </ul>
+            </div>
+            <div class="col-md-6 visible-col">
+              <div class="col-lg-12 text-center">
+                <h4 class="text-muted" style="border-bottom: 1px solid rgba(0,0,0,.125)">ДОПОЛНИТЬ УБОРКУ</h4>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  Погладим вещи
+                  <span class="badge badge-primary badge-pill">от 5 <i class="fa fa-ruble-sign"></i></span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  Уберёмся в гардеробной
+                  <span class="badge badge-primary badge-pill">от 5 <i class="fa fa-ruble-sign"></i></span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -126,7 +176,23 @@
   <div class="row" style="margin-top: 30px;">
     <div class="col-lg-12 text-center">
       <h2 class="section-heading text-uppercase">Что мы НЕ делаем на уборке</h2>
-      Здесь список
+    </div>
+    <div class="col-md-6">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><i class="fa fa-close red-icon"></i>Не поднимаем и не двигаем тяжёлые предметы и мебель</li>
+        <li class="list-group-item"><i class="fa fa-close red-icon"></i>Не делаем химическую чистку ковров</li>
+        <li class="list-group-item"><i class="fa fa-close red-icon"></i>Не чистим жалюзи и шторы</li>
+        <li class="list-group-item"><i class="fa fa-close red-icon"></i>Не прибираем в кладовке</li>
+        <li class="list-group-item"><i class="fa fa-close red-icon"></i>Не моем стены</li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><i class="fa fa-close red-icon"></i>Не удаляем глубокие пятна и не чистим паром</li>
+        <li class="list-group-item"><i class="fa fa-close red-icon"></i>Не применяем биологически опасные материалы</li>
+        <li class="list-group-item"><i class="fa fa-close red-icon"></i>Не работаем во дворах и огородах</li>
+        <li class="list-group-item"><i class="fa fa-close red-icon"></i>Не делаем уборку в труднодоступных местах</li>
+      </ul>
     </div>
   </div>
 </div>
