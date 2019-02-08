@@ -26,6 +26,16 @@
     a {
       color: black;
     }
+    .nav-tabs {
+      border-bottom: 0;
+    }
+  .nav-tabs .nav-link.active {
+    border-bottom-color: rgb(222, 226, 230);
+    border-bottom-left-radius: .25em;
+    border-bottom-right-radius: .25em;
+    color: white;
+    background-color: black;
+  }
   </style>
 {% endblock %}
 
@@ -38,7 +48,7 @@
   </div>
   <div class="row">
     <div class="col-xs-12 col-lg-12">
-    <div class="nav nav-tabs nav-fill" id="v-pills-tab" role="tablist" aria-orientation="horizontal" style="margin-bottom: 5px; width: 100%">
+    <div class="nav nav-tabs nav-fill" id="v-pills-tab" role="tablist" aria-orientation="horizontal" style="margin-bottom: 5px;">
       <a class="nav-item nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Во всей квартире</a>
       <a class="nav-item nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">На кухне</a>
       <a class="nav-item nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">В ванной</a>
